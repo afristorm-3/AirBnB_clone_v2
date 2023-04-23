@@ -54,7 +54,7 @@ class FileStorage:
             for id, dict in temp.items():
                 temp_instance = models.dummy_classes[dict["__class__"]](**dict)
                 self.__objects[id] = temp_instance
-        except:
+        except FileNotFoundError:
             pass
 
     def close(self):
